@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run script
-        uses: mooyoul/melon-ticket-actions@main
+        uses: mooyoul/melon-ticket-actions@master
         with:
           email: ${{ secrets.MELON_ID }}
           password: ${{ secrets.MELON_PW }}
