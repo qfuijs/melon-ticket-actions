@@ -1,17 +1,20 @@
 name: Melon Ticket Actions
+
 on:
-  schedule:
-    - cron: '0 0 * * *'
   workflow_dispatch:
+
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
-      - name: Run script
+
+      - name: Run Melon Ticket Script
         uses: mooyoul/melon-ticket-actions@master
         with:
-          email: ${{ secrets.MELON_ID }}
-          password: ${{ secrets.MELON_PW }}
-          showlog: true
+          entryPoint: reserve
+          args: >
+            --product-id 211635
+            --message "抢票测试"
+
